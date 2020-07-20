@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hatsicapp/models/userModel.dart';
 import 'package:hatsicapp/widgets/wids.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -9,6 +10,8 @@ class AppState with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   FirebaseUser _user;
   SharedPreferences _prefs;
+  DocumentSnapshot dataUser;
+   Firestore _db = Firestore.instance;
 
   String idUser = "";
   String errorM = "";
@@ -26,6 +29,7 @@ class AppState with ChangeNotifier {
       _user = await _auth.currentUser();
       _login = _user != null;
       _loading = false;
+       dateUser();
       notifyListeners();
     } else {
       _loading = false;
@@ -38,7 +42,7 @@ class AppState with ChangeNotifier {
   isidUser() => _prefs.getString('idUser');
   islogin() => _login;
   isloading() => _loading;
-  //FirebaseUser currentUser() => _user;
+  FirebaseUser currentUser() => _user;
 
   Future<bool> signUp(
       String nombre, String correo, String numero, String pass) async {
@@ -85,6 +89,7 @@ class AppState with ChangeNotifier {
           _prefs.setBool('isLoggedIn', true);
           _login = true;
           _loading = false;
+          dateUser();
           notifyListeners();
         } else {
           _login = false;
@@ -131,5 +136,18 @@ class AppState with ChangeNotifier {
     _mensaje = false;
     infoM = "";
     notifyListeners();
+  }
+
+  Future<DocumentSnapshot> dateUser() async {
+    dataUser =
+        await Firestore.instance.collection('users').document(_user.uid).get();
+    notifyListeners();
+  }
+
+  Stream<List<UserModel>> getUserList() {
+    return _db.collection('user').snapshots().map((snapShot) =>
+        snapShot.documents
+            .map((document) => UserModel.fromJson(document.data))
+            .toList());
   }
 }
