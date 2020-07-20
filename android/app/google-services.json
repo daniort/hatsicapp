@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "501892281714",
+    "firebase_url": "https://hatsiapp-b1709.firebaseio.com",
+    "project_id": "hatsiapp-b1709",
+    "storage_bucket": "hatsiapp-b1709.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501892281714:android:ef833455fc7fd8f93919eb",
+        "android_client_info": {
+          "package_name": "com.space.hatsiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501892281714-ao5emr8jtpn6gbiplp5tae2n7cbt6rt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr5EPV1qAQ72maGmLtNojF3HueOWjlmeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501892281714-ao5emr8jtpn6gbiplp5tae2n7cbt6rt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501892281714:android:1ec8c5fe1d304e4f3919eb",
+        "android_client_info": {
+          "package_name": "com.space.hatsicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501892281714-ao5emr8jtpn6gbiplp5tae2n7cbt6rt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr5EPV1qAQ72maGmLtNojF3HueOWjlmeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501892281714-ao5emr8jtpn6gbiplp5tae2n7cbt6rt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
